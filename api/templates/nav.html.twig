@@ -1,0 +1,122 @@
+{% block nav %}
+    <header class="header-desktop3 d-none d-lg-block">
+        <div class="section__content section__content--p35">
+            <div class="header3-wrap">
+                <div class="header__logo">
+                    <a href=" {{ path('security_login') }}">
+                        <img src=" {{ asset('/assets/images/logo-dog-blanc_03.png') }}" alt="CoolAdmin">
+                    </a>
+                </div>
+                {% if app.user %}
+                    <div class="header__navbar">
+                        <ul class="list-unstyled">
+                            <li class="has-sub">
+                                <a href="{{ path('user') }}" class="{% if mainNavUser is defined %}active{% endif %}">
+                                   <i class="material-icons">group</i>Utilisateurs
+                                </a>
+                                <ul class="header3-sub-list list-unstyled">
+                                    <li>
+                                        <a href=" {{ path('user') }}">Dashboard des Users</a>
+                                    </li>
+                                    <li>
+                                        <a href=" {{ path('user_create') }}">Création d'User</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="has-sub">
+                                <a href=""  class=" {% if mainNavCard is defined %} active {% endif %} ">
+                                     <i class="material-icons">collections_bookmark</i>Cartes
+                                </a>
+                                <ul class="header3-sub-list list-unstyled">
+                                    <li>
+                                        <a href="">Lisiting des Cartes</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Création de Cartes</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="has-sub">
+                                <a href=""  class=" {% if mainNavDeck is defined %} active {% endif %} ">
+                                     <i class="material-icons">book</i>Decks
+                                </a>
+                                <ul class="header3-sub-list list-unstyled">
+                                    <li>
+                                        <a href="">Dashboard des Decks</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Création de Deck</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="has-sub">
+                                <a href=""  class=" {% if mainNavFaction is defined %} active {% endif %} ">
+                                    <i class="material-icons">flag</i>Factions
+                                </a>
+                                <ul class="header3-sub-list list-unstyled">
+                                    <li>
+                                        <a href="">Dashboard des Factions</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Création des Héros</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="has-sub">
+                                <a href=""  class=" {% if mainNav is defined %} active {% endif %} ">
+                                   <i class="material-icons">play_arrow</i>Jouer
+                                </a>
+                            </li>
+                            <li class="has-sub">
+                                <a href="{{ path('security_logout') }}">
+                                   <i class="material-icons">power_settings_new</i>Déconnection
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                        <div class="account-wrap">
+                            <div class="account-item account-item--style2 clearfix js-item-menu">
+                                <div class="image">
+                                    <img src="{{asset('/assets/images/avatar.jpg') }}" >
+                                </div>
+                                <div class="content">
+                                    <a class="js-acc-btn" href="#"> Billy </a>
+                                </div>
+                                <div class="account-dropdown js-dropdown">
+                                    <div class="info clearfix">
+                                        <div class="image">
+                                            <a href="#">
+                                                <img src="{{asset('/assets/images/avatar.jpg') }}" alt="John Doe">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="account-dropdown__body">
+                                        <div class="account-dropdown__item">
+                                            <a href="espace_membres.php">
+                                                <i class="zmdi zmdi-account"></i>Account</a>
+                                        </div>
+                                        <div class="account-dropdown__item">
+                                            <a href="setting_membres.php">
+                                                <i class="zmdi zmdi-settings"></i>Setting</a>
+                                        </div>
+                                        <div class="account-dropdown__footer">
+                                            <a href="{{ path('security_logout')}} ">
+                                            <i class="zmdi zmdi-power"></i>Logout</a>
+                                        </div>
+                                    </div>
+                                </div>  
+                            </div>
+                        </div>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{path('security_login')}}">Connexion</a>
+                    </li>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </header>    
+
+
+{% endblock %}

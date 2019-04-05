@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{title}} {% endblock %}
+
+{% block body %}
+    
+    <main>  
+        <div class="col-lg-7 login-wrap login-content">
+            <div class="card-body card-block"> 
+                <div class="card-header">
+                    {% if editMode %}
+                        <h1> Modification d'un User </h1>
+                    {% else %}
+                        <h1> Création d'un User </h1>
+                    {% endif %}
+                </div>
+
+            <div class="card-body card-block">
+            
+                {{form_start(formUser)}}
+                    {{ form_row(formUser.name, {'label':'Nom', 'attr': {'placeholder': 'Nom', 'class' : 'input-group-addon' } } ) }}
+
+                    {{ form_row(formUser.firstname, {'label':'Prénom','attr': {'placeholder': 'Prénom', 'class' : 'input-group-addon' } } ) }}
+                  
+                    {{ form_row(formUser.username, {'label':'Pseudo','attr': {'placeholder': 'Pseudo in Game', 'class' : 'input-group-addon' } } ) }}
+            
+                    {{ form_row(formUser.email, {'label':'Adress email','attr': {'placeholder': 'Adress Email', 'class' : 'input-group-addon' } } ) }}
+                
+                    {{ form_row(formUser.password, {'label':'Mot de passe','attr': {'placeholder': 'Mot de passe ', 'class' : 'input-group-addon' } } ) }}
+                
+                    {{ form_row(formUser.confirm_password, {'label':'Confirmer le mot de passe','attr': {'placeholder': 'Mot de passe ', 'class' : 'input-group-addon' } } ) }}
+            
+                    {{ form_row(formUser.rank, {'label':'Rang de l\'utilisateur','attr': { 'class' : 'input-group-addon' } } ) }}
+                 
+
+                    {# Permet de modifier les erreurs en mode CSS et HTML  #}
+                    {# {{form_error(formArticle.title)}} #}
+
+                    <button type="submit"class="btn btn-danger btn-sm">
+                        {% if editMode %}
+                            Enregistrer
+                        {% else %}
+                            Ajouter l'user
+                        {% endif %}
+                    </button>
+
+                {{form_end(formUser)}}
+    </main>
+
+
+{% endblock %}

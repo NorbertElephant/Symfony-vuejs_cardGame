@@ -1,0 +1,353 @@
+
+body {
+    background: #A35050;
+
+}
+form {
+    height: 100%;
+    z-index: 70;
+}
+.beige {
+    color: #FBE5AE;
+}
+
+.inputGame {
+    display: none;
+}
+
+.fullPlateau {
+    max-width: 1920px;
+    max-height: 1080px;
+    height: 100vh;
+    width: 100vw;
+    /* min-width: 1920px;
+    min-height: 1080px; */
+   
+}
+
+/** CSS du Haut du plateau Main du Joueur 2 */ 
+.bannerHeroTop {
+    position: relative;
+    width: 100%;
+    height: 150px;
+    background-color: #F29234;
+
+}
+.grid5 {
+    display: grid; 
+    grid-template-columns: 19.35% 13.10% 28.80% 38.74%;
+    grid-template-areas: 'NamePlayer Hero Hand ManaTop '; 
+}
+/** Premiere colonne  */ 
+.namePlayer {
+    grid-area: NamePlayer;
+    justify-self: center;
+    z-index: 15;
+}
+    .namePlayer > h2 {
+        font-size: 4.3rem;
+    }
+/** Deuxieme colonne  */ 
+.HeroTop {
+    position: relative;
+    grid-area: Hero; 
+}
+.heartTop {
+    position: absolute;
+    top: 10%;
+    right: 0;
+    z-index: 5;
+}
+.circleTop {
+    position: absolute;
+    top: -18%;
+    left: 21%;
+    z-index: 2;
+}
+.imageHeroTop {
+    position: absolute;
+    top: -15%;
+    height: 115px;
+    width: 115px;
+    left: 23%;
+    z-index: 3;
+}
+.hp {
+    position: absolute;
+    right: 6%;
+    top: 11.5%;
+    font-size: 2.3rem;
+    z-index: 6;
+}
+/** troisieme colonne  le CSS des cartes est dans le fichier card.css*/  
+div .handTop {
+    grid-area: Hand;
+    display: flex;
+    position: relative;
+    max-height:150px ;
+    transform: rotateZ(180deg);
+    bottom: 0;
+}
+
+
+/** Quatrieme colonne  */
+.ManaTop{
+    grid-area: ManaTop ;
+    background:  url('../images/grand_mana.png') 80% 10% no-repeat ;
+}
+
+/** Cinquieme colonne  */
+.PointManaTop {
+   position: relative;
+}
+.pointManaTop {
+    position: relative;
+    left: 40%;
+    font-size: 4.3rem;
+}
+/*******************************************************************************************/
+ /** Board */ 
+.fullBoard {
+    position: relative;
+    width: 100%;
+    height: 72.22%;
+    background-color: #82CADB;
+}
+.grid3 {
+    display: grid; 
+    grid-template-columns: 22.29% 63.44% 14.27%;
+    grid-template-areas: 'Turn Board Deck';
+}
+.board {
+    grid-area: Board;
+    background: url('../images/board2.png') center 50% no-repeat ; 
+
+}
+.board1 {
+    display: flex;
+    flex-direction: row;
+    padding: 15px;
+    height: 390px;
+}
+.board2 {
+    display: flex;
+    flex-direction: row;
+    height: 390px;
+    padding: 15px;
+    padding-top: 12%;
+}
+
+.turn {
+    position: relative;
+    grid-area: Turn;
+    padding: 15px;
+    background: url('../images/crane.png')  no-repeat ; 
+    background-position: -40px 40%;
+
+}
+.turnOne {
+    position: absolute;
+    top: 47.5%;
+    left: 5%;
+    font-size: 4rem;
+
+}
+.turnTwo {
+    position: absolute;
+    top: 47.5%;
+    left: 70%;
+    font-size: 4rem;
+
+}
+.endOfTurn {
+    position: absolute;
+    background: url('../images/btn_red.png')  no-repeat ; 
+    width: 7.9rem ;
+    height: 6.9rem ;
+    font-size: 1.7rem;
+    justify-content: center;
+    top: 24%;
+    left: 20%;
+}
+.btnPlay {
+    position: absolute;
+    top: 3%;
+    left: 5%;
+}
+.btnDog {
+    background: #B71F1B;
+    padding: 5px;
+    border-radius : 5px;
+    margin: 5px;
+}
+.decks{
+    grid-area: Deck;
+    background: url('../images/right_wood.png')  no-repeat ; 
+    background-position: 120% 50% ;
+}
+
+.deck2 {
+    position: relative;
+    bottom: -18%;
+    right: 5%;
+    transform: rotateZ(270deg);
+}
+
+.deck2 span { 
+    opacity:0;
+    position: absolute;
+    margin-top:20%;
+    margin-left:-35%;
+    color:#F29234;
+    background:rgba(0,0,0,.9);
+    padding:15px;
+    border-radius:3px;
+    box-shadow:0 0 2px rgba(0,0,0,.5);
+}
+
+.deck2:hover span, .deck2:focus span {
+    transform:scale(1) rotate(90deg);     
+    opacity: 1;
+}
+
+.deck1 {
+    position: relative;
+    bottom: -12%;
+    right: 5%;
+    transform: rotateZ(270deg);
+}
+.deck1 span { 
+    opacity:0;
+    position: absolute;
+    margin-top:20%;
+    margin-left:-35%;
+    color:#F29234;
+    background:rgba(0,0,0,.9);
+    padding:15px;
+    border-radius:3px;
+    box-shadow:0 0 2px rgba(0,0,0,.5);
+}
+
+.deck1:hover span, .deck1:focus span {
+    transform:scale(1) rotate(90deg);     
+    opacity: 1;
+}
+
+.leftMountain {
+    position: absolute;
+    top: 100%;
+    left: 10%;
+    transform: translate(-50% , -75%);
+    height: auto;
+    z-index: 10;
+}
+
+.rightMountain {
+    position: absolute;
+    top: 100%;
+    right: 0%;
+    transform: translate(-50% , -75%);
+    height: auto;
+    z-index: 10;
+}
+
+
+
+
+
+/*******************************************************************************************/
+/** CSS du Bas du plateau Main du Joueur 1 */ 
+.bannerHeroBot {
+    position: relative;
+    width: 100%;
+    height: 150px;
+    background-color: #A35050;
+
+}
+.grid5Bot {
+    display: grid; 
+    grid-template-columns: 19.35% 13.10% 28.80% 10.94% 27.80%;
+    grid-template-areas: 'NamePlayer Hero HandBot PointManaBot  ManaBot   '; 
+}
+
+.namePlayer {
+    grid-area: NamePlayer;
+    justify-self: center;
+    z-index: 15;
+   
+}
+    .namePlayer > h2 {
+        position: relative;
+        font-size: 4.3rem;
+        top: 17%;
+    }
+/** Deuxieme colonne  */ 
+.Hero {
+    display: grid;
+    grid-area: Hero;
+    
+}
+.heartBot {
+    position: absolute;
+    bottom: 10%;
+    left: 28.5%;
+    z-index: 5;
+}
+.circleBot {
+    position: absolute;
+    bottom: 14.5%;
+    left: 21%;
+    z-index: 2;
+}
+
+.imageHeroBot {
+    position: absolute;
+    height: 115px;
+    width: 115px;
+    left: 23%;
+    top: 0%;
+    z-index: 3;
+}
+
+.hpBot {
+    position: absolute;
+    left: 29.5%;
+    bottom: 15%;
+    font-size: 2.3rem;
+    z-index: 5;
+}
+/** troisieme colonne  le CSS des cartes est dans le fichier card.css*/  
+.handBot {
+    grid-area: HandBot;
+    display: flex;
+    position: relative;
+    bottom: 30%;
+    max-height:150px ;
+
+}
+
+/** Quatrieme colonne  */
+.ManaBot{
+    grid-area: ManaBot;
+    justify-self: start;
+    align-self: end;
+    padding: 25px;
+}
+.grandMana{
+    position: relative;
+    top: 3%;
+}
+/** Cinquieme colonne  */
+.PointManaBot {
+    grid-area: PointManaBot;
+    justify-self: start;
+    align-self: end;
+   
+}
+.pointManaBot {
+    position: relative; 
+    left: 30%;
+    font-size: 4.3rem;
+}
+
+/*******************************************************************************************/

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}DuelOfGiants | Cut the cook!{% endblock %}</title>
+        
+
+        <!-- Fontfaces CSS-->
+        <link rel="stylesheet" href="{{ asset('./assets/css/font.css')}}">
+        <link rel="stylesheet" href="{{ asset('./assets/css/font-face.css')}}">
+        
+         <!-- Bootstrapp-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/flatly/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
+        <!-- Main CSS-->
+        <link rel="stylesheet" href="{{ asset('./assets/css/theme.css')}}" media="all">
+
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body class="page-content--bge5" >
+        {{ include('nav.html.twig')}}
+        {% block flash %}
+            {% for flash_message in app.session.flashbag.get('success') %}
+                <div class="container alert alert-success m-2" role="alert">
+                    {{ flash_message }}
+                </div>
+            {% endfor %}
+            {% for flash_message in app.session.flashbag.get('info') %}
+                <div class="container alert alert-info m-2" role="alert">
+                    {{ flash_message }}
+                </div>
+            {% endfor %}
+            {% for flash_message in app.session.flashbag.get('warning') %}
+                <div class="container alert alert-warning m-2" role="alert">
+                    {{ flash_message }}
+                </div>
+            {% endfor %}
+            {% for flash_message in app.session.flashbag.get('danger') %}
+                <div class="container alert alert-danger m-2" role="alert">
+                    {{ flash_message }}
+                </div>
+            {% endfor %}
+        {% endblock %}
+      
+
+
+        <div class="container p-5 "> 
+            {% block body %}{% endblock %}
+        </div>
+
+        
+        {% block javascripts %}{% endblock %}
+
+    
+
+    </body>
+</html>

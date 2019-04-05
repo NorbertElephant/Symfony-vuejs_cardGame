@@ -1,0 +1,213 @@
+
+input[type="radio"]{
+  display: none;
+}
+input[type="radio"]:checked + .card-face  .back_card {
+  border:2px solid #F29234;
+}
+input[type="radio"]:checked ~ .back_card  {
+  border:2px solid #649A5B;
+}
+
+.hand {
+    display: flex;
+    height: 183px;
+    padding: 0 50px;
+    justify-content: center;
+    position: relative;
+    left: 0;
+    right: 0;
+    bottom: 50%;
+  }
+  .cardGame {
+    height: 183px;
+    margin: 0 -20px;
+    position: relative;
+    width: 100px;
+  }
+  .cardGame:after {
+    bottom: 0;
+    content: '';
+    left: -60px;
+    position: absolute;
+    right: -60px;
+    top: 0px;
+    z-index: 10;
+  }
+  .card-face {
+    bottom: 0;
+    content: '';
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: 800ms cubic-bezier(0.19, 1, 0.22, 1) transform;
+  }
+  .card-face:after {
+    animation: none;
+    /* background: #fff; */
+    bottom: 0;
+    content: '';
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+ 
+  .cardGame:nth-child(1) .card-face {
+    transform: translateY(45px) rotate(-28.125deg);
+  }
+  .cardGame:nth-child(1):hover .card-face {
+    transform: translateY(-100px) rotate(0deg) scale(2);
+    transition-duration: 0ms;
+    z-index: 5;
+  }
+  .cardGame:nth-child(1):hover .card-face:after {
+    animation: fade 250ms ease-out forwards;
+  }
+  .cardGame:nth-child(1):hover:after {
+    top: -175px;
+  }
+  .cardGame:nth-child(2) .card-face {
+
+    transform: translateY(35px) rotate(-21.875deg);
+  }
+  .cardGame:nth-child(2):hover .card-face {
+    transform: translateY(-100px) rotate(0deg) scale(2);
+    transition-duration: 0ms;
+    z-index: 5;
+  }
+  .cardGame:nth-child(2):hover .card-face:after {
+    animation: fade 250ms ease-out forwards;
+  }
+  .cardGame:nth-child(2):hover:after {
+    top: -175px;
+  }
+  .cardGame:nth-child(3) .card-face {
+    transform: translateY(25px) rotate(-15.625deg);
+  }
+  .cardGame:nth-child(3):hover .card-face {
+    transform: translateY(-100px) rotate(0deg) scale(2);
+    transition-duration: 0ms;
+    z-index: 5;
+  }
+  .cardGame:nth-child(3):hover .card-face:after {
+    animation: fade 250ms ease-out forwards;
+  }
+  .cardGame:nth-child(3):hover:after {
+    top: -175px;
+  }
+  .cardGame:nth-child(4) .card-face {
+    transform: translateY(15px) rotate(-9.375deg);
+  }
+  .cardGame:nth-child(4):hover .card-face {
+    transform: translateY(-100px) rotate(0deg) scale(2);
+    transition-duration: 0ms;
+    z-index: 5;
+  }
+  .cardGame:nth-child(4):hover .card-face:after {
+    animation: fade 250ms ease-out forwards;
+  }
+  .cardGame:nth-child(4):hover:after {
+    top: -175px;
+  }
+  .cardGame:nth-child(5) .card-face {
+    transform: translateY(5px) rotate(-3.125deg);
+  }
+
+  .cardGame:nth-child(5):hover .card-face {
+    transform: translateY(-100px) rotate(0deg) scale(2);
+    transition-duration: 0ms;
+    z-index: 5;
+  }
+  .cardGame:nth-child(5):hover .card-face:after {
+    animation: fade 250ms ease-out forwards;
+  }
+  .cardGame:nth-child(5):hover:after {
+    top: -175px;
+  }
+  .cardGame:nth-child(6) .card-face {
+    transform: translateY(5px) rotate(3.125deg);
+  }
+
+  .cardGame:nth-child(6):hover .card-face {
+    transform: translateY(-100px) rotate(0deg) scale(2);
+    transition-duration: 0ms;
+    z-index: 5;
+  }
+  .cardGame:nth-child(6):hover .card-face:after {
+    animation: fade 250ms ease-out forwards;
+  }
+  .cardGame:nth-child(6):hover:after {
+    top: -175px;
+  }
+  .cardGame:nth-child(7) .card-face {
+    transform: translateY(15px) rotate(9.375deg);
+  }
+
+  .cardGame:nth-child(7):hover .card-face {
+    transform: translateY(-100px) rotate(0deg) scale(2);
+    transition-duration: 0ms;
+    z-index: 5;
+  }
+  .cardGame:nth-child(7):hover .card-face:after {
+    animation: fade 250ms ease-out forwards;
+  }
+  .cardGame:nth-child(7):hover:after {
+    top: -175px;
+  }
+  .cardGame:nth-child(8) .card-face {
+    transform: translateY(25px) rotate(15.625deg);
+  }
+  .cardGame:nth-child(8):hover .card-face {
+    transform: translateY(-100px) rotate(0deg) scale(2);
+    transition-duration: 0ms;
+    z-index: 5;
+  }
+  .cardGame:nth-child(8):hover .card-face:after {
+    animation: fade 250ms ease-out forwards;
+  }
+  .cardGame:nth-child(8):hover:after {
+    top: -175px;
+  }
+  .cardGame:nth-child(9) .card-face {
+    transform: translateY(35px) rotate(21.875deg);
+  }
+  .cardGame:nth-child(9):hover .card-face {
+    transform: translateY(-100px) rotate(0deg) scale(2);
+    transition-duration: 0ms;
+    z-index: 5;
+  }
+  .cardGame:nth-child(9):hover .card-face:after {
+    animation: fade 250ms ease-out forwards;
+  }
+  .cardGame:nth-child(9):hover:after {
+    top: -175px;
+  }
+  .cardGame:nth-child(10) .card-face {
+    transform: translateY(45px) rotate(28.125deg);
+  }
+  .cardGame:nth-child(10):hover .card-face {
+    transform: translateY(-100px) rotate(0deg) scale(2);
+    transition-duration: 0ms;
+    z-index: 5;
+  }
+  .cardGame:nth-child(10):hover .card-face:after {
+    animation: fade 250ms ease-out forwards;
+  }
+  .cardGame:nth-child(10):hover:after {
+    top: -175px;
+  }
+  @keyframes fade {
+    0% {
+      opacity: 0.9;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(1.15);
+    }
+  }
+  

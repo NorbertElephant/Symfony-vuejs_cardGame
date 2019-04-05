@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{title}} {% endblock %}
+
+{% block body %}
+ <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h3 class="title-5 m-b-35">Listing des Users</h3>
+                <div class="table-responsive table-responsive-data2">
+                    <table class="table table-data2">
+                        <thead>
+                            <tr class="border-bottom" >
+                                <th>ID</th>
+                                <th>Nom</th>
+                                <th>Prénom</th>
+                                <th>Pseudo</th>
+                                <th>Email</th>
+                                <th>Validation Email</th>
+                                <th>Parties Jouées</th>
+                                <th>Parties Gagnées</th>
+                                <th>Rang</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for user in users %}
+                                <tr class="border-bottom">
+                                    <td> {{ user.id }} </td>
+                                    <td> {{ user.name }}</td>
+                                    <td> {{ user.firstname }}</td>
+                                    <td> {{ user.username }} </td>                  
+                                    <td> <span class="block-email"> {{ user.email }} </span> </td>
+                                    {% if user.valid %}
+                                        <td> 
+                                            <span class="status--process"> {{ user.valid }}</span>
+                                        </td>
+                                    {% else %}
+                                        <td> 
+                                            <span class="status--denied">  {{ user.valid }}<span>
+                                        </td>
+                                    {% endif %}
+                                    <td> {{ user.numGamePlayed }} </td>
+                                    <td> {{ user.NumGameWin }}</td>
+                                    <td> {{ user.rank.name }}</td>
+                                    <td> 
+                                        <div class="table-data-feature">
+                                            <a href=' {{ path('user_show', { 'id': user.id } ) }}' class="item"> <i class="material-icons">person</i> </a> 
+                                            <a href=' {{ path('user_edit', { 'id': user.id } ) }}' class="item"> <i class="material-icons">build</i> </a> 
+                                            <a href=' {{ path('user_destroy', { 'id': user.id } ) }}' class="item"> <i class="material-icons">delete</i> </a>                                             
+                                        </div>
+                                    </td> 
+                                </tr>
+                                <tr class="spacer"></tr>'
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    <br>
+                    <div class="form-actions form-group ">
+                    <a href=" {{ path('user_create') }}" class="btn btn-info btn-sm bg-dark"> Créer un User  </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

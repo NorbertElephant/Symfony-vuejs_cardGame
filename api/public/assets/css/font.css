@@ -1,0 +1,37 @@
+
+@font-face {
+    font-family: 'calangoreviregular';
+    src: url('../fonts/calango/calangorevi-webfont.woff2') format('woff2'),
+         url('../fonts/calango/calangorevi-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+@font-face {
+    font-family: 'barlow';
+    src: url('../fonts/barlow/BarlowCondensed-Black.ttf') format('ttf'),
+         url('../fonts/barlow/BarlowCondensed-BlackItalic.ttf') format('ttf'),
+         url('../fonts/barlow/BarlowCondensed-Bold.ttf') format('ttf'),
+         url('../fonts/barlow/BarlowCondensed-BoldItalic.ttf') format('ttf'),
+         url('../fonts/barlow/BarlowCondensed-ExtraBold.ttf') format('ttf'),
+         url('../fonts/barlow/BarlowCondensed-ExtraBoldItalic.ttf') format('ttf'),
+         url('../fonts/barlow/BarlowCondensed-ExtraLight.ttf') format('ttf'),
+         url('../fonts/barlow/BarlowCondensed-ExtraLightItalic.ttf') format('ttf'),
+         url('../fonts/barlow/BarlowCondensed-Italic.ttf') format('ttf'),
+         url('../fonts/barlow/BarlowCondensed-Light.ttf') format('ttf'),
+         url('../fonts/barlow/BarlowCondensed-LightItalic.ttf') format('ttf'),
+         url('../fonts/barlow/BarlowCondensed-Medium.ttf') format('ttf'),
+         url('../fonts/barlow/BarlowCondensed-MediumItalic.ttf') format('ttf'),
+         url('../fonts/barlow/BarlowCondensed-Regular.ttf') format('ttf'),
+         url('../fonts/barlow/BarlowCondensed-SemiBold.ttf') format('ttf'),
+         url('../fonts/barlow/BarlowCondensed-SemiBoldItalic.ttf') format('ttf'),
+         url('../fonts/barlow/BarlowCondensed-Thin.ttf') format('ttf'),
+         url('../fonts/barlow/BarlowCondensed-ThinItalic.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@import url('https://fonts.googleapis.com/css?family=Barlow:300,400,400i,700,800i,900');

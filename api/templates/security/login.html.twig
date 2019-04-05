@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %} 
+
+{% block body %}
+        <div class="login-wrap">
+            <div class="login-content">
+                <div class="login-logo">
+                    <a href="#">
+                        <img src=" {{ asset('assets/images/logo-dog_03.png')}}" alt="logoDog">
+                    </a>
+                </div>
+                <h1> Espace de connexion </h1> 
+                <div class="login-form">
+                    <form action="{{ path('security_login') }}" method="POST">
+                        <div class="form-group">
+                            <label>Pseudo</label>
+                            <input class="au-input au-input--full" type="text" name="_username" placeholder="Pseudo">
+                        </div>
+                        <div class="form-group">
+                            <label>Mot de passe</label>
+                            <input class="au-input au-input--full" type="password" required name="_password" placeholder="Mot de passe">
+                        </div>
+                        <div class="login-checkbox">
+                            <label>
+                                <a href="#">Mot de passe oublié ? </a>
+                            </label>
+                        </div>
+                        <button class="au-btn au-btn--block btn-danger m-b-20" type="submit">Connexion</button>
+                    </form>
+                    <div class="register-link">
+                        <p>
+                            Tu n'as pas de compte ? 
+                            <a href=" {{ path('security_registration') }}">Inscris-toi ici ! </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+{% endblock %}

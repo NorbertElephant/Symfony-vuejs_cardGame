@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{title}} {% endblock %}
+
+{% block body %}
+<section class="p-t-20">
+    <div class="col-lg-6 mx-auto" >
+        <div class="card">
+            <div class="card-header">Profil de l'user</div>
+                <div class="card-body card-block">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-addon bg-white">Nom : </div>
+                            <p class="input-group-addon "> {{user.name}}</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-addon bg-white">Prénom : </div>
+                            <p class="input-group-addon"> {{user.firstname}}</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-addon bg-white">Pseudo : </div>
+                            <p class="input-group-addon"> {{user.username}}</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-addon bg-white">Email : </div>
+                            <p class="input-group-addon"> {{user.email}}</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-addon bg-white">Nombres de Games jouées : </div>
+                            <p class="input-group-addon "> {{user.numGamePlayed}}</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-addon bg-white">Nombres de Games gagnées : </div>
+                            <p class="input-group-addon "> {{user.numGameWin}}</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-addon bg-white">Rang : </div>
+                            <p class="input-group-addon "> {{user.rank.name}}</p>
+                        </div>
+                    </div>
+                    <a href="{{ path('user_edit', {'id': user.id} ) }}" class="btn btn-primary bg-dark"> Modifier </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<div class="col-md-6 offset-md-3">
+    <h1> Créer ton compte ! </h1>
+
+    {{ form_start(form) }}
+
+    <div class="form-group">
+        {{ form_row(form.firstname, { 'label':'Prénom', 'attr': {'placeholder': 'prénom', 'class': 'form-control'}} ) }}
+    </div>
+    <div class="form-group">
+        {{ form_row(form.name, { 'label': 'Nom de famille',  'attr': {'placeholder': 'Nom de famille ','class': 'form-control'}} ) }}
+    </div>
+    <div class="form-group">
+        {{ form_row(form.email, {'label':'Email de l\'utilisateur','attr': {'placeholder': 'Adresse email','class': 'form-control'}}) }}
+    </div>
+    <div class="form-group">
+        {{ form_row(form.username, { 'label':'Nom de l\'utilisateur',  'attr': {'placeholder': 'Pseudo in game ','class': 'form-control'}} ) }}
+    </div>
+    <div class="form-group">
+        {{ form_row(form.password,{'label':'Mot de passe de l\'utilisateur','attr': {'placeholder': 'Mot de passe','class': 'form-control'}}) }}
+    </div>
+
+
+    <button type="submit" class="btn btn-success">Inscription !</button>
+
+    {{ form_end(form) }}
+</div>
+
+
+{% endblock %}
