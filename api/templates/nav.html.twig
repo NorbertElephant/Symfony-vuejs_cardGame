@@ -24,15 +24,15 @@
                                 </ul>
                             </li>
                             <li class="has-sub">
-                                <a href=""  class=" {% if mainNavCard is defined %} active {% endif %} ">
+                                <a href="{{ path('card') }}"  class=" {% if mainNavCard is defined %} active {% endif %} ">
                                      <i class="material-icons">collections_bookmark</i>Cartes
                                 </a>
                                 <ul class="header3-sub-list list-unstyled">
                                     <li>
-                                        <a href="">Lisiting des Cartes</a>
+                                        <a href="{{ path('card') }}">Lisiting des Cartes</a>
                                     </li>
                                     <li>
-                                        <a href="">Création de Cartes</a>
+                                        <a href="{{ path('card_create') }}">Création de Cartes</a>
                                     </li>
                                 </ul>
                             </li>
@@ -42,7 +42,7 @@
                                 </a>
                                 <ul class="header3-sub-list list-unstyled">
                                     <li>
-                                        <a href="">Dashboard des Decks</a>
+                                        <a href="{{ path('deck') }}">Dashboard des Decks</a>
                                     </li>
                                     <li>
                                         <a href="">Création de Deck</a>
@@ -81,7 +81,7 @@
                                     <img src="{{asset('/assets/images/avatar.jpg') }}" >
                                 </div>
                                 <div class="content">
-                                    <a class="js-acc-btn" href="#"> Billy </a>
+                                    <a class="js-acc-btn" href="#"> {{app.user.firstname}} </a>
                                 </div>
                                 <div class="account-dropdown js-dropdown">
                                     <div class="info clearfix">

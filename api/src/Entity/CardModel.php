@@ -243,6 +243,8 @@ class CardModel
         return $this->cardGames;
     }
 
+  
+
     public function addCardGame(CardGame $cardGame): self
     {
         if (!$this->cardGames->contains($cardGame)) {
@@ -274,12 +276,12 @@ class CardModel
         return $this->typeOfCards;
     }
 
+
     public function addTypeOfCard(TypeOfCard $typeOfCard): self
     {
-        if (!$this->typeOfCards->contains($typeOfCard)) {
-            $this->typeOfCards[] = $typeOfCard;
-            $typeOfCard->addCardModel($this);
-        }
+     
+        $this->typeOfCards[] = $typeOfCard;
+        $typeOfCard->addCardModel($this);
 
         return $this;
     }

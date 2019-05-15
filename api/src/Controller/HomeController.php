@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
+use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\httpFoundation\Request;
 
 use App\Entity\User;
@@ -13,32 +14,26 @@ use App\Repository\UserRepository;
 class HomeController extends AbstractController
 {
     /**
+     * @Route("/", name="home_main")
      * @Route("/home", name="home")
      */
-    public function index(UserRepository $repo)
+    public function index(ObjectManager $manager)
     {
 
-        $users = $repo->findAll();
+        // var_dump($this->get('security.token_storage')->getToken()->getUser()  ) ; // Avoir l'user Connecté 
+        if($this->get('security.token_storage')->getToken()->getUser() !== 'anon.' ) {
 
-        return $this->render('user/index.html.twig', [
-            'title' => 'DoG Listing des users',
-            'users' => $users,
-        ]);
+    
+           
+            return $this->redirectToRoute('user');
 
-    // }else {
-        // var_dump($app);
 
-        // if ($app)  {
+        } else {
+            
+            return $this->redirectToRoute('security_login');
 
-        //     return $this->render('user/show.html.twig', [
-                // 'user' => $user,
-        //     ]);
-        // }else {
-
-        //     return $this->render('user/index.html.twig', [
-        //         // 'users' => $users,
-        //     ]);
-        // }
+        }
+    
 
     }
 }

@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{title}} {% endblock %}
+
+{% block body %}
+    
+    <main>  
+        <div class="col-lg-7 login-wrap login-content">
+            <div class="card-body card-block"> 
+                <div class="card-header">
+                    {% if editMode %}
+                        <h1> Modification d'une Carte </h1>
+                    {% else %}
+                        <h1> Création d'une Carte </h1>
+                    {% endif %}
+                </div>
+
+            <div class="card-body card-block">
+            
+                {{form_start(formCard)}}
+                    {{ form_row(formCard.name, {'label':'Nom', 'attr': {'placeholder': 'Nom', 'class' : 'input-group-addon' } } ) }}
+
+                    {{ form_row(formCard.backgroundCard, {'label':'Dos de la carte (non-obligatoire)','attr': {'class' : 'input-group-addon' } } ) }}
+                  
+                    {{ form_row(formCard.picture, {'label':'Visuel de la carte','attr': {'class' : 'input-group-addon' } } ) }}
+            
+                    {{ form_row(formCard.mana, {'label':'Coût en Mana de la carte','attr': {'placeholder': 'Nombre de mana', 'class' : 'input-group-addon' } } ) }}
+                
+                    {{ form_row(formCard.pa, {'label':'Point d\'attaque ','attr': {'placeholder': 'Montant des pa ', 'class' : 'input-group-addon' } } ) }}
+                
+                    {{ form_row(formCard.hp, {'label':'Point de vie','attr': {'placeholder': 'Montant des points de vie', 'class' : 'input-group-addon' } } ) }}
+            
+                    {{ form_row(formCard.quote, {'label':'Citation sur la carte','attr': { 'placeholder': 'Citation...','class' : 'input-group-addon' } } ) }}
+                 
+                    {{ form_row(formCard.heroModel, {'label':'Faction de la carte','attr': { 'class' : 'input-group-addon' } } ) }}
+                    
+                    {{ form_row(formCard.typeOfCards, {'label':'Type de la carte' } ) }}
+                 
+
+                    {# Permet de modifier les erreurs en mode CSS et HTML  #}
+                    {# {{form_error(formArticle.title)}} #}
+
+                    <button type="submit"class="btn btn-danger btn-sm">
+                        {% if editMode %}
+                            Enregistrer
+                        {% else %}
+                            Ajouter la carte
+                        {% endif %}
+                    </button>
+
+                {{form_end(formCard)}}
+    </main>
+
+
+{% endblock %}

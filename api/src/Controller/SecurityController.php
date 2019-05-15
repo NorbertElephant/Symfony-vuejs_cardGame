@@ -52,8 +52,7 @@ class SecurityController extends AbstractController
         ]);
     }
      /**
-     * @Route("/", name="security_login")
-     * @Route("/home", name="security_login")
+     * @Route("/connexion", name="security_login")
      */
     public function login(){
         return $this->render('security/login.html.twig');
@@ -62,8 +61,14 @@ class SecurityController extends AbstractController
     /**
      * @Route("/deconnexion", name="security_logout")
      */
-    public function logout(){
-        
+    public function logout(ObjectManager $manager){
+
+        $user =  $this->get('security.token_storage')->getToken()->getUser();
+
+        $user->setConnect(false);
+
+        $manager->persist($user);
+        $manager->flush();
     }
 
 

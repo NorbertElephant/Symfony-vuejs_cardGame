@@ -1,0 +1,85 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{title}} {% endblock %}
+
+
+{% block body %}
+    <div class="row">
+        <section class="col-lg-4">
+        <div class="card">
+            <div class="card-header">Stats de la carte</div>
+                <div class="card-body card-block">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-addon bg-white">Nom : </div>
+                            <p class="input-group-addon "> {{card.name}}</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-addon bg-white">mana : </div>
+                            <p class="input-group-addon"> {{card.mana}}</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-addon bg-white">Point d'attaqe : </div>
+                            <p class="input-group-addon"> {{card.pa}}</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-addon bg-white">Point de vie : </div>
+                            <p class="input-group-addon "> {{card.hp}}</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-addon bg-white">Faction de la carte: </div>
+                            <p class="input-group-addon "> {{card.heroModel.faction.name}}</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-addon bg-white">Type(s) de la Carte : </div>
+                            {% for type in card.typeOfCards %}
+                            <p class="input-group-addon "> {{type.name}}
+                            </p>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <a href="{{ path('card_edit', {'id': card.id} ) }}" class="btn btn-primary bg-dark"> Modifier </a>
+                </div>
+        </div>  
+    </section>
+
+    <section class="col-lg-6 m-auto">
+        <h2>Visuel de la carte </h2>
+        {% for picture in card.typeOfCards  %}
+            {% if picture.id == 2 %}
+            <div class="back_card">
+                <img class="picture_card" src="{{ asset(card.picture) }}" alt=""/>
+                <img class="type_of_card" src="{{ asset(card.typeOfCards[0].urlBackgroundCard ) }}" alt=""/>   
+                <p class="name_card orange_color  calango"> {{ card.name }} </p> 
+                <p class="mana_card_sort orange_color calango"> {{card.mana}} </p> 
+                <q class="quote_card_sort orange_color barlow  "> {{card.quote}} </q>  
+            </div>
+            {% else %}
+            <div class="back_card">
+                <img class="picture_card" src="{{ asset(card.picture) }}" alt=""/>
+                <img class="type_of_card" src="{{  asset(card.typeOfCards[0].urlBackgroundCard )  }}" alt=""/>     
+                <p class="name_card orange_color calango"> {{ card.name }} </p>     
+                <p  class="hp_card orange_color calango"> {{ card.hp }} </p>
+                <p  class="pa_card orange_color calango">{{ card.pa }} </p>
+                <p class="mana_card orange_color calango"> {{ card.mana }} </p> 
+                <q class="quote_card orange_color barlow "> {{ card.quote }} </q>
+            </div>
+
+            {% endif %}
+        {% endfor %}
+    </section>
+
+</div>
+    
+
+{% endblock %}

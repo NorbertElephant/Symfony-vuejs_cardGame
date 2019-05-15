@@ -24,7 +24,7 @@ security:
 
             logout: 
                 path: security_logout
-                target: /home
+                target: /
 
             # activate different ways to authenticate
 

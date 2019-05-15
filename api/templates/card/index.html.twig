@@ -1,0 +1,86 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block body %}
+ <section class="p-t-20">
+    <div class="row">
+        <div class="col-md-12">
+            <h3 class="title-5 m-b-35">Listing des Cartes</Canvas></h3>
+                <div class="table-data__tool">
+                    <div class="table-data__tool-left">
+                        <div class="rs-select2--light rs-select2--md">
+                            <select class="js-select2 select2-hidden-accessible" name="property" tabindex="-1" aria-hidden="true">
+                                <option selected="selected">Valeur cartes </option>
+                                <option value="">Option 1</option>
+                                <option value="">Option 2</option>
+                            </select>
+                        </div>
+                        <button class="au-btn-filter">Trier</button>
+                    </div>
+                </div>
+                <div class="table-responsive table-responsive-data2">
+                    <table class="table table-data2">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nom</th>
+                                <th>Type(s) de la Carte</th>
+                                <th>Picture</th>
+                                <th>Citation</th>
+                                <th>Mana</th>
+                                <th>Points Attaque</th>
+                                <th>Points Vies</th>
+                                <th>Faction</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                         {% for card in cards %}
+                                <tr class="border-bottom">
+                                    <td> {{ card.id }} </td>
+                                    <td> {{ card.name }}</td>
+                                    <td> 
+                                        {% for type in  card.typeOfCards %}
+
+                                                {% if type.name == "Créature" %}
+                                                    <p class="text-success" > {{ type.name  }} </p>
+                                                {% elseif type.name == "Bouclier" %}
+                                                    <p class="text-danger" > {{ type.name  }} </p>
+                                                {% elseif type.name == "Spécial" %}
+                                                    <p class="text-warning" > {{ type.name  }} </p>
+                                                {% else %}
+                                                    <p class="text-primary" > {{ type.name  }} </p>
+
+                                                {% endif %}
+
+
+                                        {% endfor %}
+                                    </td>
+                                    <td> <img src="{{ asset(card.picture) }}"> </td> 
+                                    <td> {{ card.quote }} </td>
+                                    <td> {{ card.mana }} </td> 
+                                    <td> {{ card.pa }} </td>
+                                    <td> {{ card.hp }} </td> 
+                                    <td> {{ card.heroModel.faction.name }} </td>       
+                                    <td> 
+                                        <div class="table-data-feature">
+                                            <a href=' {{ path('card_show', { 'id': card.id } ) }}' class="item"> <i class="material-icons">person</i> </a> 
+                                            <a href=' {{ path('card_edit', { 'id': card.id } ) }}' class="item"> <i class="material-icons">build</i> </a> 
+                                            <a href=' {{ path('card_destroy', { 'id': card.id } ) }}' class="item"> <i class="material-icons">delete</i> </a>                                             
+                                        </div>
+                                    </td> 
+                                </tr>
+                                <tr class="spacer"></tr>'
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    <br>
+                    <div class="form-actions form-group">
+                    <a href="{{ path('card_create') }}" class="btn btn-info btn-sm"> Créer une Carte  </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+{% endblock %}

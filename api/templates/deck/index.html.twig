@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ title }} {% endblock %}
+
+{% block body %}
+ <section class="p-t-20">
+    <div class="row">
+        <div class="col-md-12">
+            <h3 class="title-5 m-b-35">Listing des Decks</Canvas></h3>
+                <div class="table-responsive table-responsive-data2">
+                    <table class="table table-data2">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nom</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for deck in decks %}
+                                <tr>
+                                    <td> {{ deck.id }} </td>
+                                    <td> {{ deck.name }}</td>
+                                     <td> 
+                                        <div class="table-data-feature">
+                                            <a href=' ' class="item"> <i class="material-icons">person</i> </a> 
+                                            <a href=' ' class="item"> <i class="material-icons">build</i> </a> 
+                                            <a href=' ' class="item"> <i class="material-icons">delete</i> </a>                                             
+                                        </div>
+                                    </td> 
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    <br>
+                    <div class="form-actions form-group">
+                    <a href="{{ path('AddDeckCinema') }}" class="btn btn-info btn-sm"> Créer un deck Cinema </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+
+
+{% endblock %}
